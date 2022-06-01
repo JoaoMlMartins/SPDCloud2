@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Destination(models.Model):
+    id = models.AutoField(db_column='ID', primary_key=True)
     name = models.CharField(
         unique=True,
         max_length=50,
@@ -17,6 +18,7 @@ class Destination(models.Model):
         return self.name
 
 class Cruise(models.Model):
+    id = models.AutoField(db_column='ID', primary_key=True)
     name = models.CharField(
         unique=True,
         max_length=50,
@@ -36,6 +38,7 @@ class Cruise(models.Model):
         return self.name
 
 class InfoRequest(models.Model):
+    id = models.AutoField(db_column='ID', primary_key=True)
     name = models.CharField(
         max_length=50,
         null=False,

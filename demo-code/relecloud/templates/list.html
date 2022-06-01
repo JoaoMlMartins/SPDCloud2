@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+ReleCloud - Request information
+{% endblock title %}
+
+{% block content %}
+<h1>Request information</h1>
+<h2>Fillout the form below to request information about our cruises</h2>
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Notes</th>
+        <th>Cruise</th>
+    </tr>
+    {% for contrato in object_list %}
+        <tr>
+            <td>{{ contrato.name }}</td>
+            <td>{{ contrato.email }}</td>
+            <td>{{ contrato.notes }}</td>
+            <td>{{ contrato.cruise }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'about' %}">Voltar</a>
+{% endblock content %}

@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from . import models
 from django.views import generic
 from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic import ListView
 
 # Create your views here.
 def index(request):
@@ -31,3 +32,7 @@ class InfoRequestCreate(SuccessMessageMixin, generic.CreateView):
     fields = ['name', 'email', 'cruise', 'notes']
     success_url = reverse_lazy('index')
     success_message = 'Thank you, %(name)s! We will email you when we have more information about %(cruise)s!'
+
+class list_request(ListView):
+    model = models.InfoRequest
+    template_name="list.html"
