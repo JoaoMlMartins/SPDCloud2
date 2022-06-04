@@ -1,7 +1,3 @@
-# ReleCloud sample
-
-This is a sample Django project used for [Beginner's Series: Django](https://aka.ms/BeginnersSeriesDjango). It's a fictitious company offering tours to space.
-
 ## Install and startup steps
 
 1. Clone the repository
