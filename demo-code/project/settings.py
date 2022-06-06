@@ -25,8 +25,8 @@ SECRET_KEY = '_*&5c@1153xw6=489*2*=&*%=4)8f^m54kb@3ca-cb(wm%b@wm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['spd.azurewebsites.net', '127.0.0.1']
-
+# ALLOWED_HOSTS = ['spd.azurewebsites.net', '127.0.0.1']
+ALLOWED_HOSTS = ['35.239.230.161', '127.0.0.1']
 
 # Application definition
 
@@ -82,18 +82,29 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'django',
+#         'USER': 'Admin_spd@spd-db',
+#         'PASSWORD': 'a1E!34c45',
+#         'HOST': 'spd-db.postgres.database.azure.com',
+#         'PORT': '5432',
+#         'OPTIONS': {'sslmode': 'require'},
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django',
-        'USER': 'Admin_spd@spd-db',
-        'PASSWORD': 'a1E!34c45',
-        'HOST': 'spd-db.postgres.database.azure.com',
-        'PORT': '5432',
-        'OPTIONS': {'sslmode': 'require'},
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydb',
+        'USER': 'joaom',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '',
+        # 'OPTIONS': {'sslmode': 'require'},
     }
 }
-
 
 # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
@@ -133,8 +144,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+import os
 STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
