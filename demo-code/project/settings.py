@@ -151,3 +151,5 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 application = get_wsgi_application()
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
