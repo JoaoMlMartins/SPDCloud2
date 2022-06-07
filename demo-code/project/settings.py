@@ -27,7 +27,7 @@ SECRET_KEY = '_*&5c@1153xw6=489*2*=&*%=4)8f^m54kb@3ca-cb(wm%b@wm'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['spd.azurewebsites.net', '127.0.0.1']
-ALLOWED_HOSTS = ['34.118.93.56']
+ALLOWED_HOSTS = ['34.118.93.56', '127.0.0.1']
 
 # Application definition
 
