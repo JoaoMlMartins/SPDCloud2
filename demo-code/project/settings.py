@@ -27,7 +27,7 @@ SECRET_KEY = '_*&5c@1153xw6=489*2*=&*%=4)8f^m54kb@3ca-cb(wm%b@wm'
 DEBUG = True
 
 # ALLOWED_HOSTS = ['spd.azurewebsites.net', '127.0.0.1']
-ALLOWED_HOSTS = ['35.239.230.161', '127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -97,13 +97,8 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydb',
-        'USER': 'joaom',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '',
-        # 'OPTIONS': {'sslmode': 'require'},
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -149,7 +144,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-application = get_wsgi_application()
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
